@@ -3,7 +3,7 @@ import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
-import { Header } from "./../src/components/header";
+import { Header } from "./components/header";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
