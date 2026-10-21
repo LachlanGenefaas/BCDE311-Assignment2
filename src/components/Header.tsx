@@ -11,7 +11,7 @@ export function Header({ image }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="flex flex-col items-center gap-4 m-2 md:flex-row md:items-center md:justify-between md:gap-10">
+    <header className="m-2 flex flex-col items-center gap-4 bg-[var(--colour-header)] p-4 font-bold md:flex-row md:items-center md:justify-between md:gap-10">
       <img
         src={image}
         alt="Header Image"
@@ -27,7 +27,11 @@ export function Header({ image }: HeaderProps) {
       <nav className={`${menuOpen ? "block" : "hidden"} md:block`}>
         <ul className="flex flex-wrap flex-col items-center justify-center gap-4 md:flex-row md:justify-end md:gap-10">
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle
+              variant="link"
+              id="dropdown-basic"
+              className="dropdown-toggle border-0 bg-transparent p-0 font-bold text-black text-decoration-none shadow-none"
+            >
               Prostate Cancer
             </Dropdown.Toggle>
 
@@ -44,7 +48,11 @@ export function Header({ image }: HeaderProps) {
           </Dropdown>
 
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle
+              variant="link"
+              id="dropdown-basic-2"
+              className="dropdown-toggle border-0 bg-transparent p-0 font-bold text-black text-decoration-none shadow-none"
+            >
               Recovery Support
             </Dropdown.Toggle>
 
@@ -61,9 +69,21 @@ export function Header({ image }: HeaderProps) {
             </Dropdown.Menu>
           </Dropdown>
 
-          <li>FAQ</li>
-          <li>About Us</li>
-          <li>Donate</li>
+          <li>
+            <a className="link" href="#/faq">
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a className="link" href="#/about">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a className="link" href="#/donate">
+              Donate
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
