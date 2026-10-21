@@ -1,3 +1,22 @@
+@import "tailwindcss";
+
+.link-card-link,
+.link-card-link:focus,
+.link-card-link:active {
+  color: #254A77;
+  text-decoration: none;
+}
+
+.link-card-link:hover {
+  color:aliceblue;
+  text-decoration: underline;
+}
+
+@theme {
+  --colour-primary: #254A77;
+}
+
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;

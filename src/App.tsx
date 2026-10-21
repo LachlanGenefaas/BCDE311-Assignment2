@@ -5,6 +5,7 @@ import viteLogo from "./assets/vite.svg";
 import "./App.css";
 import { Header } from "./components/Header.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LinkCard from "./components/LinkCard.tsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,13 +13,14 @@ function App() {
   return (
     <>
       <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
         <div>
-          <Header />
+          <Header image={heroImg} />
+          <div className="flex gap-10 ">
+            <LinkCard image={heroImg} title="My Link" link="#" />
+            <LinkCard image={reactLogo} title="My Link" link="#" />
+            <LinkCard image={viteLogo} title="My Link" link="#" />
+          </div>
+
           <h1>Get started</h1>
           <p>
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
