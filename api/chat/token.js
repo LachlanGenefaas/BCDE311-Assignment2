@@ -1,16 +1,12 @@
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({
-      error: "Method not allowed",
-    });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   const secret = process.env.DIRECT_LINE_SECRET;
 
   if (!secret) {
-    return res.status(500).json({
-      error: "Chat is not configured",
-    });
+    return res.status(500).json({ error: "Chat is not configured" });
   }
 
   try {
@@ -27,19 +23,12 @@ export default async function handler(req, res) {
     );
 
     if (!response.ok) {
-      return res.status(502).json({
-        error: "Unable to connect to bot service",
-      });
+      return res.status(502).json({ error: "Unable to connect to bot service" });
     }
 
     const data = await response.json();
-
-    return res.status(200).json({
-      token: data.token,
-    });
+    return res.status(200).json({ token: data.token });
   } catch {
-    return res.status(500).json({
-      error: "Unable to connect to bot service",
-    });
+    return res.status(500).json({ error: "Unable to connect to bot service" });
   }
 }

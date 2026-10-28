@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ReactWebChat, { createDirectLine } from "botframework-webchat";
-const secret = import.meta.env.DIRECT_LINE_SECRET;
 
 export default function ChatBot() {
   const [directLine, setDirectLine] = useState(null);
