@@ -3,9 +3,11 @@ import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
+
 import { Header } from "./components/Header.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LinkCard from "./components/LinkCard.tsx";
+import ChatBot from "./components/ChatBot.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -34,6 +36,8 @@ function App() {
           Count is {count}
         </button>
       </section>
+
+      <ChatBot />
 
       <div className="ticks"></div>
 
