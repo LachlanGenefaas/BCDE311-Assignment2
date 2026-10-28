@@ -12,15 +12,17 @@ export default function ChatBot() {
 
     async function connect() {
       try {
-        const response = await fetch(`${secret}/chat/token`, {
+        const response = await fetch("/api/chat/token", {
         method: "POST",
         });
 
         if (!response.ok) {
-          throw new Error("Could not retrieve chat token");
+        throw new Error(`Token request failed: ${response.status}`);
         }
 
         const { token } = await response.json();
+
+
 
         if (cancelled) return;
 
