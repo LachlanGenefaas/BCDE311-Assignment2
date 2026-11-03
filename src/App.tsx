@@ -8,6 +8,7 @@ import { Header } from "./components/Header.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LinkCard from "./components/LinkCard.tsx";
 import ChatBot from "./components/ChatBot.jsx";
+import FactBar from "./components/FactBar.tsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -38,6 +39,8 @@ function App() {
       </section>
 
       <ChatBot />
+
+      <FactBar />
 
       <div className="ticks"></div>
 
