@@ -11,11 +11,11 @@ interface LinkCardProps {
 
 export default function LinkCard({ image, title, link }: LinkCardProps) {
   return (
-    <div className="border-12 flex flex-col flex-1 !justify-between border-[var(--colour-primary)] rounded-4xl max-w-4/5 p-4 flex flex-col items-center justify-center gap-10">
+    <div className="LinkCard flex w-full max-w-[280px] flex-1 flex-col items-center justify-center gap-6 rounded-4xl border-12 border-[var(--colour-primary)] p-4 [@media(min-width:900px)]:flex-[1_1_0%] [@media(min-width:900px)]:justify-between">
       <img
         src={image}
         alt={title}
-        className="block max-w-full h-auto min-w-50 max-h-30 object-contain"
+        className="block h-auto max-h-30 w-full max-w-full object-contain"
       />
       <a href={link} className="link-card-link block">
         <h3>{title}</h3>

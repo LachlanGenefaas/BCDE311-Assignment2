@@ -1,5 +1,117 @@
 @import "tailwindcss";
 
+.text-block {
+  text-align: left;
+  width: min(100%, 1200px);
+  max-width: 100%;
+  padding-inline: clamp(1rem, 5vw, 12rem);
+  margin: 0 auto 6rem;
+  box-sizing: border-box;
+}
+
+.event-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  width: min(100%, 1200px);
+  max-width: 100%;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.event-image-wrap {
+  flex: 1 1 760px;
+  max-width: 660px;
+  width: 100%;
+  height: 420px;
+  border: 4px solid #f7cb00;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.event-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-details {
+  flex: 1 1 420px;
+  min-width: 0;
+  max-width: 600px;
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 1170px) {
+  .event-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .event-image-wrap {
+    flex-basis: 100%;
+    max-width: 100%;
+    width: min(100%, 420px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+  }
+
+  .event-details {
+    max-width: 100%;
+    width: min(100%, 420px);
+    margin: 0 auto;
+  }
+}
+
+.event-details h2 {
+  margin: 0 0 1rem;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  color: #254a77;
+  font-weight: 700;
+}
+
+.event-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(110px, 1fr));
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-top: 2px solid #254a77;
+  border-bottom: 2px solid #254a77;
+  margin-bottom: 1.20rem;
+  font-size: 1.1rem;
+  color: #254a77;
+  text-align: center;
+  align-items: center;
+}
+
+.event-meta span {
+  display: block;
+  white-space: normal;
+}
+
+.event-button {
+  margin-top: 2rem;
+  background: transparent;
+  border: 2px solid #254a77;
+  color: #254a77;
+  padding: 0.9rem 2.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
 .link-card-link,
 .link-card-link:focus,
 .link-card-link:active {
@@ -44,7 +156,7 @@
   color: #000 !important;
 }
 
-@theme {
+:root {
   --colour-primary: #254A77;
   --colour-header: #6CB4CB;
   --colour-yellow: #F7CB00;
@@ -108,6 +220,8 @@
       scale(0.8);
   }
 }
+
+
 
 #center {
   display: flex;

@@ -1,5 +1,6 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // import { Component } from "react";
 // import type { JSX } from "react/jsx-runtime";
 
@@ -7,23 +8,25 @@ interface HeaderProps {
   image: string;
 }
 
-export function Header({ image }: HeaderProps) {
+export default function Header({ image }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="m-2 flex flex-col items-center gap-4 bg-[var(--colour-header)] p-4 font-bold md:flex-row md:items-center md:justify-between md:gap-10">
-      <img
-        src={image}
-        alt="Header Image"
-        className="h-auto w-24 max-w-full object-contain sm:w-28 md:w-32 lg:w-40"
-      />
-      <button
-        className="md:hidden"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
-      >
-        ☰
-      </button>
+    <header className="mb-12 max-h-50 flex flex-col items-center gap-4 bg-[var(--colour-header)] p-4 font-bold md:flex-row md:items-center md:justify-between md:gap-10">
+      <div className="flex w-full items-center justify-between md:w-auto md:justify-start">
+        <img
+          src={image}
+          alt="Header Image"
+          className="h-auto w-24 max-w-full object-contain sm:w-28 md:w-32 lg:w-40"
+        />
+        <button
+          className="text-2xl md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+      </div>
       <nav className={`${menuOpen ? "block" : "hidden"} md:block`}>
         <ul className="flex flex-wrap flex-col items-center justify-center gap-4 md:flex-row md:justify-end md:gap-10">
           <Dropdown>
@@ -70,9 +73,9 @@ export function Header({ image }: HeaderProps) {
           </Dropdown>
 
           <li>
-            <a className="link" href="#/faq">
+            <Link className="link" to="/faq">
               FAQ
-            </a>
+            </Link>
           </li>
           <li>
             <a className="link" href="#/about">
