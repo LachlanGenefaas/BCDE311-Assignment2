@@ -14,6 +14,7 @@ import FactBar from "./components/FactBar.tsx";
 import Event from "./components/Event.jsx";
 import PageFooter from "./components/PageFooter.tsx";
 import FAQPage from "./components/FAQPage.tsx";
+import TreatmentsPage from "./components/TreatmentsPage.tsx";
 
 function HomePage() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -89,6 +90,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/faq" element={<FAQPage headerImage={heroImg} footerImage={heroImg} />} />
+      <Route path="/treatments" element={<TreatmentsPage headerImage={heroImg} footerImage={heroImg} />} />
     </Routes>
   );
 }

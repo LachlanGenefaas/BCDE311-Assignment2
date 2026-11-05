@@ -42,7 +42,7 @@ export default function Header({ image }: HeaderProps) {
               <Dropdown.Item href="#/action-1">
                 What is Prostate Cancer?
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Treatments</Dropdown.Item>
+              <Dropdown.Item><Link to="/treatments">Treatments</Link></Dropdown.Item>
               <Dropdown.Item href="#/action-3">
                 About the Prostate
               </Dropdown.Item>

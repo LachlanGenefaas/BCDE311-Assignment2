@@ -156,6 +156,69 @@
   color: #000 !important;
 }
 
+.page-heading {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto 6rem;
+}
+
+.page-heading h1 {
+  color: var(--colour-primary);
+  margin-bottom: 1.75rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-dropdown {
+  border: 2px solid #2f73c9;
+  border-radius: 3px;
+  background: #fff;
+  text-align: left;
+}
+
+.faq-dropdown-header {
+  min-height: 58px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--colour-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-dropdown-header::-webkit-details-marker {
+  display: none;
+}
+
+.faq-dropdown-chevron {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-right: 4px solid var(--colour-primary);
+  border-bottom: 4px solid var(--colour-primary);
+  transform: rotate(45deg) translate(-4px, 2px);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.faq-dropdown[open] .faq-dropdown-chevron {
+  transform: rotate(225deg) translate(-4px, -2px);
+}
+
+.faq-dropdown-content {
+  border-top: 1px solid #d8e4f3;
+  padding: 1rem;
+  color: var(--colour-primary);
+  line-height: 1.5;
+}
+
 :root {
   --colour-primary: #254A77;
   --colour-header: #6CB4CB;
