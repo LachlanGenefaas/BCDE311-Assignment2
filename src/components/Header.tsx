@@ -14,11 +14,13 @@ export default function Header({ image }: HeaderProps) {
   return (
     <header className="mb-12 max-h-50 flex flex-col items-center gap-4 bg-[var(--colour-header)] p-4 font-bold md:flex-row md:items-center md:justify-between md:gap-10">
       <div className="flex w-full items-center justify-between md:w-auto md:justify-start">
-        <img
-          src={image}
-          alt="Header Image"
-          className="h-auto w-24 max-w-full object-contain sm:w-28 md:w-32 lg:w-40"
-        />
+        <Link to="/" aria-label="Return to home page">
+          <img
+            src={image}
+            alt="Header Image"
+            className="h-auto w-24 max-w-full object-contain sm:w-28 md:w-32 lg:w-40"
+          />
+        </Link>
         <button
           className="text-2xl md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -39,14 +41,14 @@ export default function Header({ image }: HeaderProps) {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">
+              <Dropdown.Item as={Link} to="/prostate-cancer">
                 What is Prostate Cancer?
               </Dropdown.Item>
-              <Dropdown.Item><Link to="/treatments">Treatments</Link></Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
+              <Dropdown.Item as={Link} to="/treatments">Treatments</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/about-the-prostate">
                 About the Prostate
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-4">Getting Tested</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/getting-tested">Getting Tested</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
@@ -60,13 +62,13 @@ export default function Header({ image }: HeaderProps) {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Support Groups</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Prost-Fit</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Rainbow Blue</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
+              <Dropdown.Item as={Link} to="/support-groups">Support Groups</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/prost-fit">Prost-Fit</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/rainbow-blue">Rainbow Blue</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/support-services">
                 PCFNZ Support Services
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
+              <Dropdown.Item as={Link} to="/information-service">
                 Information Service
               </Dropdown.Item>
             </Dropdown.Menu>
@@ -78,14 +80,14 @@ export default function Header({ image }: HeaderProps) {
             </Link>
           </li>
           <li>
-            <a className="link" href="#/about">
+            <Link className="link" to="/about">
               About Us
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="link" href="#/donate">
+            <Link className="link" to="/donate">
               Donate
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

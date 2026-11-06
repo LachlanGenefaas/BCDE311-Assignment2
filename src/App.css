@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+.list {
+  list-style:circle;
+}
+
 .text-block {
   text-align: left;
   width: min(100%, 1200px);
@@ -217,6 +222,57 @@
   padding: 1rem;
   color: var(--colour-primary);
   line-height: 1.5;
+}
+
+.info-page-section {
+  margin-top: 2rem;
+}
+
+.info-page-introduction {
+  margin-bottom: 2rem;
+}
+
+.info-page-section h2 {
+  color: var(--colour-primary);
+  margin-bottom: 0.75rem;
+}
+
+
+
+
+
+
+.table-of-contents {
+  margin: 2rem 0 3rem;
+}
+
+.table-of-contents ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.table-of-contents ~ h1[id] {
+  scroll-margin-top: 2rem;
+}
+
+.table-of-contents a {
+  color: var(--colour-primary);
+  font-weight: 700;
+}
+
+.table-of-contents ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.info-page-section h2 {
+  scroll-margin-top: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
