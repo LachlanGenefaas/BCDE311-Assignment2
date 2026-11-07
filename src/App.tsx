@@ -52,8 +52,11 @@ function HomePage() {
       </div>
 
       <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
-        {chatOpen && (
-          <div className="h-[600px] w-[360px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
+        <div
+          className={`h-[min(720px,calc(100vh-6rem))] w-[min(432px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ${
+            chatOpen ? "" : "hidden"
+          }`}
+        >
             <div className="flex items-center justify-between border-b border-slate-200 bg-[var(--colour-primary)] px-4 py-3 text-white">
               <span className="text-base font-semibold">AI Assistant</span>
               <button
@@ -68,7 +71,6 @@ function HomePage() {
               <ChatBot />
             </div>
           </div>
-        )}
 
         <button
           type="button"

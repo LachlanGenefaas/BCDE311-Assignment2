@@ -2,6 +2,22 @@
 npm install
 npm run dev
 
+## Copilot Studio Direct Line setup
+
+For local ASP.NET development, set it from the `BotBackend` folder:
+
+Powershell:
+  dotnet user-secrets init
+  dotnet user-secrets set "DirectLine:Secret" "YOUR_DIRECT_LINE_SECRET"
+
+
+Or set the environment variable `DirectLine__Secret`.
+Start the backend with `dotnet run`, then start React with `npm run dev`.
+
+The backend token endpoint is `http://localhost:5038/api/chat/token`. React defaults to this URL.
+
+For another backend address, set `VITE_CHAT_API_URL` in an environment file such as `.env.local`.
+
 
 
 # React + TypeScript + Vite
