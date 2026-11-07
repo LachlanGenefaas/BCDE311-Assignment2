@@ -13,9 +13,7 @@ export default function ChatBot() {
     const configuredApiUrl = import.meta.env.VITE_CHAT_API_URL?.trim();
     const apiBaseUrl = configuredApiUrl
       ? configuredApiUrl.replace(/\/+$/, "")
-      : import.meta.env.DEV
-        ? "https://prostate-bot-backend-bjbqhbafbrbac5cs.newzealandnorth-01.azurewebsites.net"
-        : "";
+      : "https://prostate-bot-backend-bjbqhbafbrbac5cs.newzealandnorth-01.azurewebsites.net";
     const tokenEndpoint = `${apiBaseUrl}/api/chat/token`;
 
     async function connect() {
