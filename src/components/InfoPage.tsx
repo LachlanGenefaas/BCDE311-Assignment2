@@ -35,7 +35,7 @@ export default function InfoPage({
       <main className="page-heading">
         <h1>{title}</h1>
         <div className="info-page-introduction">{introduction}</div>
-        {sections.length > 0 && (
+        {sections.length > 1 && (
           <nav className="table-of-contents" aria-label="Table of contents">
             <h1>On This Page</h1>
             <ul>

@@ -16,6 +16,7 @@ import PageFooter from "./components/PageFooter.tsx";
 import FAQPage from "./components/FAQPage.tsx";
 import TreatmentsPage from "./components/TreatmentsPage.tsx";
 import InfoPage from "./components/InfoPage.tsx";
+import DonatePage from "./components/DonatePage.tsx";
 
 function HomePage() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -241,10 +242,28 @@ function App() {
 
       <Route path="/support-services" element={<InfoPage {...pageProps}
       title="PCFNZ Support Services"
-      introduction="Prostate Cancer Foundation New Zealand support services help people navigate diagnosis, treatment and recovery." 
+      introduction={
+      <>
+        <img src="https://prostate.org.nz/storage/uploads/5853335c-5031-48c3-a923-e438a0714c56/new-site-page-banner-1055x400-3.png?fm=jpg&q=80&fit=max&crop=325%2C399%2C700%2C0"></img>
+        <p>The Prostate Cancer Foundation has partnered with Southern Cross Wellness Partners to provide a 24/7 service to assist men, and those affected by a prostate cancer diagnosis, with comprehensive support in times of emotional distress. To be connected with counselling support tailored to your needs:</p>
+        <p><strong>Call 0800 735 343, or email <a href="mailto:referrals@raisementalhealth.co.nz">referrals@raisementalhealth.co.nz</a></strong></p>
+        <p>The Prostate Cancer Foundation Counselling Service provides four sessions of counselling support per presenting issue, delivered in person, on the phone or via video service such as Zoom, Microsoft Teams or Skype. The range of support available covers:</p>
+        <ul>
+          <li>Trauma</li>
+          <li>Grief and loss</li>
+          <li>Relationship support</li>
+          <li>Wellbeing support</li>
+          <li>Anxiety and mood</li>
+        </ul>
+        <p>All practitioners providing counselling through the Prostate Cancer Foundation Counselling Service are registered professionals with a minimum of five years of practice experience. They are located throughout the country and will provide you with support wherever you live, from someone local to you.</p>
+      </>} 
       sections={[{
-        heading: "How support can help",
-        content: "Services may include peer support, telephone conversations, community events and links to trusted information and health services."
+        heading: "Make an Appointment",
+        content: (
+          <>
+          <p>If you are experiencing emotional distress and feel you might be in need of counselling support email <a href="mailto:referrals@raisementalhealth.co.nz">referrals@raisementalhealth.co.nz</a> , call <strong>0800 735 343</strong> or complete the contact form on their website and they will call you to make an appointment. <em>Please note, the form is multi-purpose and may contain questions such as workplace, which may not be relevant for you. If so, just write N/A or similar if the field is marked compulsory.</em></p>
+          </>
+        )
       }]} />} />
 
       <Route path="/information-service" element={<InfoPage {...pageProps}
@@ -263,13 +282,7 @@ function App() {
         content: ""
       }]} />} />
 
-      <Route path="/donate" element={<InfoPage {...pageProps}
-      title="Donate"
-      introduction="Your donation helps fund information, awareness programmes and support services for people affected by prostate cancer."
-      sections={[{
-        heading: "Make a difference",
-        content: "To discuss donations, partnerships or fundraising opportunities, please contact our team. Every contribution helps us support more people and whānau."
-      }]} />} />
+      <Route path="/donate" element={<DonatePage {...pageProps} />} />
     </Routes>
   );
 }

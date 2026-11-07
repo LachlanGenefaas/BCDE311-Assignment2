@@ -26,28 +26,25 @@ export default function PageFooter({ image }: PageFooterProps) {
 
       <div className="flex flex-col items-start gap-2 pt-2 text-sm font-medium md:items-end md:text-base">
         <div className="flex flex-wrap items-center gap-4 md:gap-6">
-          <Link to="/faq" className="text-[#1d2d3d] no-underline hover:underline">
+          <Link to="/faq" className="link">
             FAQs
           </Link>
-          <Link to="/about" className="text-[#1d2d3d] no-underline hover:underline">
+          <Link to="/about" className="link">
             About Us
           </Link>
-          <Link
-            to="/donate"
-            className="border border-[#1d2d3d] bg-transparent px-4 py-1 font-semibold text-[#1d2d3d] no-underline hover:underline"
-          >
+          <Link to="/donate" className="link">
             Donate
           </Link>
         </div>
 
         <div className="flex flex-wrap gap-4 md:gap-6">
-          <a href="#" className="text-[#1d2d3d] no-underline hover:underline">
+          <a href="#" className="link">
             Privacy Policy
           </a>
-          <a href="#" className="text-[#1d2d3d] no-underline hover:underline">
+          <a href="#" className="link">
             Contact Us
           </a>
-          <a href="#" className="text-[#1d2d3d] no-underline hover:underline">
+          <a href="#" className="link">
             The Prostate
           </a>
         </div>
