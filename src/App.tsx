@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
 import chatBotIcon from "./assets/ChatBotIcon.png";
+import Event1 from "./assets/Event1.png"
+import FAQ1 from "./assets/FAQ1.jpg"
+import Test1 from "./assets/Test1.jpg"
+import Prostate1 from "./assets/Prostate1.jpg"
 import "./App.css";
 
 import Header from "./components/Header.tsx";
@@ -17,6 +19,8 @@ import FAQPage from "./components/FAQPage.tsx";
 import TreatmentsPage from "./components/TreatmentsPage.tsx";
 import InfoPage from "./components/InfoPage.tsx";
 import DonatePage from "./components/DonatePage.tsx";
+import ProstateQuizPage from "./components/ProstateQuizPage.tsx";
+import UsefulLinksPage from "./components/UsefulLinksPage.tsx";
 
 function HomePage() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -38,17 +42,35 @@ function HomePage() {
         </p>
       </div>
 
-      <div className="mx-auto mb-30 flex w-full max-w-5xl flex-col items-center justify-center gap-10 px-4 [@media(min-width:900px)]:flex-row">
-        <LinkCard image={heroImg} title="My Link" link="#" />
-        <LinkCard image={reactLogo} title="My Link" link="#" />
-        <LinkCard image={viteLogo} title="My Link" link="#" />
+      <div className="mx-auto mb-30 flex w-full max-w-[1280px] flex-col items-center justify-center gap-10 px-4 [@media(min-width:900px)]:flex-row">
+        <LinkCard image={Prostate1} title="What is Prostate Cancer?" link="/prostate-cancer" />
+        <LinkCard image={Test1} title="Getting Tested" link="/getting-tested" />
+        <LinkCard image={FAQ1} title="FAQs" link="/faq" />
       </div>
 
       <FactBar />
       <div className="mt-20">
-        <h1>Current Events</h1>
-        <Event image={heroImg} />
-        <Event image={heroImg} />
+        <h1 className="text-center m-4">Current Events</h1>
+
+        <Event
+          image={Event1}
+          imageAlt="Man standing with arms crossed"
+          title="Webinar: Prostate Cancer 101 - For The Newly Diagnosed"
+          date="Dec 8 2026"
+          time="19:00 - 20:30"
+          admission="0.0"
+          description={
+            <>
+              <p>Recently diagnosed with prostate cancer, or know someone who has?</p>
+              <p>Understanding the diagnosis, treatment options and what lies ahead can feel overwhelming, particularly in the early days.</p>
+              <p>This free webinar has been developed to help men recently diagnosed with prostate cancer, along with those around them, better understand their diagnosis and the choices available to them.</p>
+              <p>Join experienced urological surgeon Dr Jim Duthie and oncology nurse specialist Stephanie Sanden as they discuss all this and more.</p>
+              <p>This is a free event, online via ZOOM, so join us from the comfort of home.</p>
+
+            </>
+          }
+          buttonLink="https://events.humanitix.com/webinar-prostate-cancer-101-for-the-newly-diagnosed?c=pcfnzwebsiteevent"
+        />
       </div>
 
       <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
@@ -268,23 +290,29 @@ function App() {
         )
       }]} />} />
 
-      <Route path="/information-service" element={<InfoPage {...pageProps}
-      title="Information Service"
-      introduction="Our information service helps you find clear, reliable information about prostate health and prostate cancer."
-      sections={[{
-        heading: "Questions are welcome",
-        content: "Use this service to find resources, prepare questions for appointments and better understand the information provided by your health team."
-      }]} />} />
-
-      <Route path="/about" element={<InfoPage {...pageProps}
+      <Route path="/about" element={<InfoPage {...pageProps} 
       title="About Us"
-      introduction="We provide information, awareness and support for people affected by prostate cancer and their families, whānau and carers."
-      sections={[{
-        heading: "Our purpose",
-        content: ""
-      }]} />} />
+      introduction={
+        <>
+          <p>Prostate Cancer Foundation of New Zealand - Te Kāhui Mate Pukupuku Repe Tātea o Aotearoa Manatōpu (PCFNZ), operates two customer facing brands: Prostate Cancer Foundation NZ and Testicular Cancer NZ - Mate Pukupuku Raho Aotearoa (TCNZ), reflecting a whole-of-life approach to men's health. </p>
+          <p>Not only providing vital support, education and information to patients, their families and whānau, we strive through both brands to reduce the impact prostate and testicular cancer by raising awareness, funding NZ-based research and advocating for improved standards of care. </p>
+          <img src="https://prostate.org.nz/storage/uploads/05063d96-ff8a-494a-b164-4775a4944b99/living-well-page-fatigue.jpg?fm=jpg&q=80&fit=max&crop=253%2C314%2C117%2C0"></img>
+          <p>PCFNZ pursues a world where those affected by either cancer can navigate their health with knowledge, confidence and dignity. PCFNZ is there for them when they need it the most, with a nurse-led information service; round-the-clock counselling; LGBTQIA+ Rainbow Blue peer support and national network offering holistic support and fellowship.</p>
+          <p>Read our current Annual Report below.</p>
+          <a href="https://prostate.org.nz/resources/pcfnz-annual-report-fy2025">PCFNZ Annual Report 2025FY</a>
+        </>
+      }
+      />} />
 
       <Route path="/donate" element={<DonatePage {...pageProps} />} />
+      <Route
+        path="/prostate-quiz"
+        element={<ProstateQuizPage {...pageProps} />}
+      />
+      <Route
+        path="/useful-links"
+        element={<UsefulLinksPage {...pageProps} />}
+      />
     </Routes>
   );
 }

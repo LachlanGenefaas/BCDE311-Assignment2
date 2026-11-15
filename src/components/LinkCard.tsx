@@ -1,7 +1,4 @@
-// import { useState, useEffect } from "react";
-// import React from "react";
-// import Dropdown from "react-bootstrap/Dropdown";
-// import { Component } from "react";
+import { Link } from "react-router-dom";
 
 interface LinkCardProps {
   image: string;
@@ -11,15 +8,20 @@ interface LinkCardProps {
 
 export default function LinkCard({ image, title, link }: LinkCardProps) {
   return (
-    <div className="LinkCard flex w-full max-w-[280px] flex-1 flex-col items-center justify-center gap-6 rounded-4xl border-12 border-[var(--colour-primary)] p-4 [@media(min-width:900px)]:flex-[1_1_0%] [@media(min-width:900px)]:justify-between">
-      <img
-        src={image}
-        alt={title}
-        className="block h-auto max-h-30 w-full max-w-full object-contain"
-      />
-      <a href={link} className="link-card-link block">
-        <h3>{title}</h3>
-      </a>
-    </div>
+    <Link
+      to={link}
+      className="LinkCard link-card-link flex aspect-[6/6] w-full max-w-[400px] flex-col items-center gap-2 rounded-4xl border-12 border-[var(--colour-primary)] px-3 pt-3 [@media(min-width:900px)]:flex-[1_1_400px]"
+    >
+      <div className="h-[58%] w-full overflow-hidden rounded-2xl">
+        <img
+          src={image}
+          alt={title}
+          className="block h-full w-full object-cover"
+        />
+      </div>
+      <h3 className="mb-0 flex min-h-0 flex-1 w-full items-center justify-center text-center">
+        {title}
+      </h3>
+    </Link>
   );
 }
