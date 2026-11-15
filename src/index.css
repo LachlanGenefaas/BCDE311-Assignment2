@@ -64,6 +64,17 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  :root {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 2.25rem);
+    letter-spacing: -0.06rem;
+  }
+}
+
 #root {
   width: 100%;
   max-width: 100%;

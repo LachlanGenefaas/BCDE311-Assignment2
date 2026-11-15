@@ -73,9 +73,9 @@ function HomePage() {
         />
       </div>
 
-      <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+      <div className="chat-widget fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
         <div
-          className={`h-[min(720px,calc(100vh-6rem))] w-[min(432px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ${
+          className={`chat-panel h-[min(720px,calc(100dvh-6rem))] w-[min(432px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl ${
             chatOpen ? "" : "hidden"
           }`}
         >
@@ -97,12 +97,12 @@ function HomePage() {
         <button
           type="button"
           onClick={() => setChatOpen((open) => !open)}
-          className="flex h-20 w-20 items-center justify-center rounded-full bg-transparent shadow-none transition-transform hover:scale-105"
+          className="chat-launcher flex items-center justify-center rounded-full bg-transparent shadow-none transition-transform hover:scale-105"
         >
           <img
             src={chatBotIcon}
             alt="AI assistant"
-            className="h-15 w-15 object-contain"
+            className="chat-launcher-icon object-contain"
           />
         </button>
       </div>

@@ -7,7 +7,7 @@ interface PageFooterProps {
 
 export default function PageFooter({ image: _image }: PageFooterProps) {
   return (
-    <footer className="mt-12 flex w-full items-center justify-between gap-6 bg-[var(--colour-header)] px-4 py-5 text-[#1d2d3d] md:px-8 lg:px-10">
+    <footer className="mt-12 flex w-full flex-col items-center justify-between gap-6 bg-[var(--colour-header)] px-4 py-5 text-[#1d2d3d] md:flex-row md:items-start md:px-8 lg:px-10">
       <div className="flex min-w-0 w-full flex-col items-center gap-3 md:w-[260px] md:flex-none md:items-start">
         <div className="flex w-full items-center justify-center md:justify-start">
           <Link to="/" aria-label="Return to home page">
@@ -18,15 +18,17 @@ export default function PageFooter({ image: _image }: PageFooterProps) {
             />
           </Link>
         </div>
-        <br></br>
         <div className="flex flex-wrap gap-4 text-sm font-medium md:text-base">
           <span>Call #0800 477 678</span>
           <span>Email: info@prostate.org.nz</span>
         </div>
       </div>
 
-      <div className="flex flex-col items-start gap-2 pt-2 text-sm font-medium md:items-end md:text-base">
-        <div className="flex flex-wrap items-center gap-4 md:gap-6">
+      <nav
+        aria-label="Footer navigation"
+        className="flex w-full flex-col items-center gap-2 text-sm font-medium md:w-auto md:items-end md:text-base"
+      >
+        <div className="flex flex-wrap items-center justify-center gap-2 md:justify-end md:gap-6">
           <Link to="/useful-links" className="link">
             Useful Links
           </Link>
@@ -41,7 +43,7 @@ export default function PageFooter({ image: _image }: PageFooterProps) {
           </Link>
         </div>
 
-        <div className="flex flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap justify-center gap-2 md:justify-end md:gap-6">
           <Link to="/getting-tested" className="link">
             Getting Tested
           </Link>
@@ -52,7 +54,7 @@ export default function PageFooter({ image: _image }: PageFooterProps) {
             The Prostate
           </Link>
         </div>
-      </div>
+      </nav>
     </footer>
   );
 }
