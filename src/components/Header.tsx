@@ -13,17 +13,17 @@ export default function Header({ image: _image }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="mb-12 flex flex-col items-center gap-4 bg-[var(--colour-header)] p-3 font-bold min-[851px]:flex-row min-[851px]:items-center min-[851px]:justify-between min-[851px]:gap-10">
+    <header className="mb-12 flex flex-col items-center gap-5 bg-[var(--colour-header)] p-4 font-bold min-[851px]:flex-row min-[851px]:items-center min-[851px]:justify-between min-[851px]:gap-10 min-[851px]:p-3">
       <div className="flex w-full items-center justify-between min-[851px]:w-auto min-[851px]:justify-start">
         <Link to="/" aria-label="Return to home page">
           <img
             src={iconImg}
             alt="Header logo"
-            className="h-auto w-32 max-w-full object-contain sm:w-36 min-[851px]:w-40 lg:w-56"
+            className="h-auto w-40 max-w-full object-contain sm:w-44 min-[851px]:w-40 lg:w-56"
           />
         </Link>
         <button
-          className="text-2xl min-[851px]:hidden"
+          className="p-2 text-3xl min-[851px]:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
